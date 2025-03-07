@@ -27,3 +27,53 @@ In console write down the next commands
     - ```npm install```
     - ```npm run dev```
     After this our project will run adn we can see the url on the console to copy it and checkit on brwoser or other html viewer.
+
+- Creation of card as component example and imoplement it on the main 
+- Create file adding the components we want and add the parameters we would like to inject on this component.
+    ```     
+    const Card1 = ({ title, description }) => {
+        return <section>
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </section>
+    }
+    export default Card1; 
+    ```
+- import the component and use it 
+    ```
+    import Card1 from '../components/card'
+
+    <Card1 title="Card 1" description="Description" />
+      
+    ```
+## useState hook
+- A hook looks like a special functionality to implement in javascript project when we use react.
+- useState is a hook which function is to give us the control to manage an state that can be any value, String, number, list, etc. We can read it, and update  it, places where we are using this state will update if we update it.
+
+- we start importing the hook
+    ```
+    import { useState } from 'react';
+    ```
+
+- Then we create the component, create the state, read it and update it.
+    ```
+    const Counter = () => {
+    const [count, setCount] = useState(0);
+    return (
+
+        <div>
+            <p>El contador esta en: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Incrementar </button>
+            <button onClick={() => setCount(count - 1)}>Decrementar </button>
+        </div>
+        )
+    }
+    export default Counter; 
+    ```
+
+- Creating the state
+    ```
+        const [count, setCount] = useState(0);
+    ```
+    - Count: is the value which we will read
+    - setCount: Is the methoid we will call and execute and there we will change the value.
