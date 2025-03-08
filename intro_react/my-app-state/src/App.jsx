@@ -3,12 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import ToogleButton from '../components/ToogleButton'
+import NameForm from '../components/NameForm'
 
 function App() {
   return (
     <>
-      <ToogleButton />
+      <h1>Formulario de Nombre</h1>
+      <NameForm />
     </>
   )
 }
