@@ -3,13 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import NameForm from '../components/NameForm'
+import CounterWithEffect from '../components/CounterWithEffect'
 
 function App() {
   return (
     <>
-      <h1>Formulario de Nombre</h1>
-      <NameForm />
+      <CounterWithEffect />
     </>
   )
 }

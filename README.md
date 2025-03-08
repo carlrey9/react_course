@@ -46,6 +46,7 @@ In console write down the next commands
     <Card1 title="Card 1" description="Description" />
       
     ```
+
 ## useState hook
 - A hook looks like a special functionality to implement in javascript project when we use react.
 - useState is a hook which function is to give us the control to manage an state that can be any value, String, number, list, etc. We can read it, and update  it, places where we are using this state will update if we update it.
@@ -77,3 +78,104 @@ In console write down the next commands
     ```
     - Count: is the value which we will read
     - setCount: Is the methoid we will call and execute and there we will change the value.
+---
+### Creating a form 
+- We will use an input and save it in the use state to show it later
+- firts we create the component
+```
+
+import { useState } from "react";
+
+const NameForm = () => {
+    const [name, setNameForm] = useState("");
+
+    return (
+        <div>
+            <input
+                type="text"
+                placeholder="Ingresa tu nombre"
+                value={name}
+                onChange={(event) => setNameForm(event.target.value)}
+            />
+            <p>
+                Hola, {name || "visitante"}
+            </p>
+
+
+        </div>
+    );
+}
+
+export default NameForm;    
+```
+- We import and use the new component
+```
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+import NameForm from '../components/NameForm'
+
+function App() {
+  return (
+    <>
+      <h1>Formulario de Nombre</h1>
+      <NameForm />
+    </>
+  )
+}
+
+export default App
+
+```
+
+---
+### Use Effect 
+Is A hook which we can use to execute an additional action when a value change.
+
+- We will use the same counter but modifying it a bit adding the new hook "useEffect" and execute "the counter has change to #" on the console.
+
+```
+import { useState, useEffect } from "react";
+
+const CounterWithEffect = () => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        console.log(`El contador cambió a: ${count}`);
+    }, [count]);
+
+    return (
+
+        <div>
+            <p>El contador esta en: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Incrementar </button>
+        </div>
+    )
+}
+
+export default CounterWithEffect;
+```
+
+- And let´s import and use the component in the app.jsx
+```
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+import CounterWithEffect from '../components/CounterWithEffect'
+
+function App() {
+  return (
+    <>
+      <CounterWithEffect />
+    </>
+  )
+}
+
+export default App
+
+```
+
