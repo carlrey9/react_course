@@ -1,8 +1,14 @@
-import styles from "./Card.module.sass";
+/* import styles from "./Card.module.sass"; */
 
 const Card = () => {
+    const textStyles = {
+        color: "blue",
+        fontSize: "srem",
+        textAlign: "center"
+    }
+
     return (
-        <div className={styles.card}>
+        <div style={textStyles}>
             Soy una Card
         </div>
     );
